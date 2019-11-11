@@ -54,6 +54,21 @@ export class Router {
     }
   }
 
+  patchHistory(fn: Function): any {
+    window.history.pushState = (
+      state: any,
+      ...args: any[]
+    ): void => {
+      fn.call(window.history, state, ...args)
+
+      if (typeof window.onpopstate == "function") {
+        window.onpopstate({
+          state: state,
+        } as PopStateEvent)
+      }
+    }
+  }
+
   reset(): void {
     this.routes = {}
   }
