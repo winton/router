@@ -1,7 +1,7 @@
 {
   "name": "@winton/router",
   "version": "0.0.1",
-  "description": "Micro universal router",
+  "description": "Micro universal router 🛣️",
   "main": "dist/cjs/index.js",
   "scripts": {
     "build": "./bin/build",
