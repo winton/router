@@ -1,13 +1,13 @@
 import expect from "./expect"
 import router from "../src/index"
 
-import load, { instance } from "@fn2/loaded"
+import loaded from "@fn2/loaded"
 import logger from "@fn2/logger"
 import tinyId from "@fn2/tiny-id"
 
 beforeEach(() => {
-  instance.reset()
-  load({ logger, router, tinyId })
+  loaded.reset()
+  loaded.load({ logger, router, tinyId })
 })
 
 it("routes", () => {
