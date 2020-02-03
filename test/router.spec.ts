@@ -11,8 +11,10 @@ beforeEach(() => {
 })
 
 it("routes", () => {
-  router.add("404", () => "404")
-  router.add("route", () => "route")
+  router.add({
+    404: () => "404",
+    route: () => "route",
+  })
 
   expect(router.route("/route")).toBe("route")
   expect(router.route("/no-exist")).toBe("404")

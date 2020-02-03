@@ -11,11 +11,17 @@ export class Router {
     routeDefinitions: Record<string, Function> = {}
   ) {
     for (const key in routeDefinitions) {
-      this.add(key, routeDefinitions[key])
+      this.addOne(key, routeDefinitions[key])
     }
   }
 
-  add(route: string, handler: Function): void {
+  add(routes: Record<string, Function>): void {
+    for (const route in routes) {
+      this.addOne(route, routes[route])
+    }
+  }
+
+  addOne(route: string, handler: Function): void {
     const pieces = route.split("/")
     let rules = this.routes
 
