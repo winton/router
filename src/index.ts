@@ -10,9 +10,7 @@ export class Router {
   constructor(
     routeDefinitions: Record<string, Function> = {}
   ) {
-    for (const key in routeDefinitions) {
-      this.addOne(key, routeDefinitions[key])
-    }
+    this.add(routeDefinitions)
   }
 
   add(routes: Record<string, Function>): void {
